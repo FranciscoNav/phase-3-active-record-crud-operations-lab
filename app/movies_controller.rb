@@ -6,9 +6,9 @@
 # end                              # end
 
 def can_be_instantiated_and_then_saved
-  movie = __
+  movie = Movie.new #added
   movie.title = "This is a title."
-  __
+  movie.save #added
 end
 
 def can_be_created_with_a_hash_of_attributes
@@ -23,13 +23,14 @@ def can_be_created_with_a_hash_of_attributes
   movie = __
 end
 
-def can_be_created_in_a_block(args = __)
+def can_be_created_in_a_block(title == "Home Alone", release_date == 1990)
   # If no arguments are passed, use default values:
   # title == "Home Alone"
   # release_date == 1990
   
-  Movie.create do |m|
-    __
+  Movie.create do |m| 
+    m == title #added
+    m == release_date #added
   end
 end
 
@@ -46,7 +47,7 @@ def can_get_size_of_the_database
 end
 
 def can_find_the_first_item_from_the_database_using_id
-  __
+  Movies.find(1) # added
 end
 
 def can_find_by_multiple_attributes
